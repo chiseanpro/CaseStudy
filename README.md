@@ -8,6 +8,7 @@ How to load the project:
 - Open "persistence-mysql.properties," and make change to "jdbc.url","jdbc.user,""jdbc.passowrd" value according to your mysql database port setting.
 - In eclipse, run the project on Tomcat server.  
 
+Website description with screenshots:
 - When the visitor first open the web, it will ask for their role: user or admin
 ![Start Page](https://user-images.githubusercontent.com/98332973/150824959-6ccb1097-8cf3-455f-937b-f5f50805907b.JPG)
 
