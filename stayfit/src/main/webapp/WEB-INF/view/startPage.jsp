@@ -4,7 +4,7 @@
 <html lang="en">
  <head>
  
-  	<title>Login 10</title>
+  	<title>Start Page</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/loginstyle.css">
 	<style>

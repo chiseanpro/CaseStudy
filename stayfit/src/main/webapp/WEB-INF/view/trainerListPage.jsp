@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/loginstyle.css">
 	<style>
 		body {
-  		background-image: url('${pageContext.request.contextPath}/resources//images/login-backgroup.jpg');
+  		background-image: url('${pageContext.request.contextPath}/resources/images/login-backgroup.jpg');
   		background-repeat: no-repeat;
   		background-size: 100%;
 		}
@@ -20,7 +20,7 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-    <h2 class="active"> User Login </h2>
+    <h2 class="active"> Trainer Data Manager </h2>
 			<table>
 				<tr>
 					<th>First Name</th>
