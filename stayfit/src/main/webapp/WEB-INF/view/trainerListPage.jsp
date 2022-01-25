@@ -20,7 +20,7 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-    <h2 class="active"> User Login </h2>
+    <h2 class="active"> Trainer Infromation List </h2>
 			<table>
 				<tr>
 					<th>First Name</th>
