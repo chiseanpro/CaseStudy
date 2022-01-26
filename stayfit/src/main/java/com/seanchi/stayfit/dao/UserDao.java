@@ -10,4 +10,5 @@ public interface UserDao {
 	
 	public User userValidation (User theUser);
 	
+	public List<User> getUserList();
 }

@@ -28,4 +28,11 @@ public class UserServiceImplement implements UserService {
 		return userDao.userValidation(theUser);
 	}
 
+	@Override
+	@Transactional
+	public List<User> getUserList() {
+
+		return userDao.getUserList();
+	}
+
 }

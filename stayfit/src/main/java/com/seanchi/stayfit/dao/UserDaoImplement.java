@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.seanchi.stayfit.entity.Trainer;
 import com.seanchi.stayfit.entity.User;
 
 @Repository
@@ -36,6 +37,14 @@ public class UserDaoImplement implements UserDao{
         
         return user;
         
+	}
+	
+	@Override
+	public List<User> getUserList(){
+		Session mySession = sessionFactory.getCurrentSession();		
+		Query<User> myQuery = mySession.createQuery("from User", User.class);		
+		List <User> Users = myQuery.getResultList();		
+		return Users;
 	}
 
 }

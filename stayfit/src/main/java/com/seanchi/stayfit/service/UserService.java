@@ -2,7 +2,7 @@ package com.seanchi.stayfit.service;
 
 import java.util.List;
 
-import com.seanchi.stayfit.dao.UserDao;
+
 import com.seanchi.stayfit.entity.User;
 
 public interface UserService {
@@ -11,4 +11,5 @@ public interface UserService {
 	
 	public User userValidation (User theUser);
 
+	public List<User> getUserList();
 }
