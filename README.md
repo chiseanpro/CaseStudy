@@ -44,3 +44,11 @@ Website description with screenshots:
 
 -the web read through each trainer's youtube video link saved in their databse, and show them to the user.
 ![Training Youtube Video](https://user-images.githubusercontent.com/98332973/150822984-71b058bd-e2b5-41b5-866e-5ac795c03e63.JPG)
+
+-to Make the project restful, thre is @Restcontroller class under com.seanchi.stayfit.rest package. i have tested it with Postman:
+http://localhost:8080/stayfit/restapi/getTrainers
+http://localhost:8080/stayfit/restapi/getUser
+http://localhost:8080/stayfit/restapi/getTrainers/2
+![getTrainersREST](https://user-images.githubusercontent.com/98332973/151127979-ffcb266e-83e8-48bb-841d-a720aa43ae68.JPG)
+![GetUsersRest](https://user-images.githubusercontent.com/98332973/151127996-f90f78db-2cb8-4c14-89ca-753cd83738f0.JPG)
+![GetOneTrainerREST](https://user-images.githubusercontent.com/98332973/151128007-b85a126f-189d-451b-bb75-5124328b9059.JPG)
