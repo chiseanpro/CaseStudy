@@ -20,7 +20,7 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
-    <h2 class="active"> Trainer Data Manager </h2>
+    <h2 class="active"> Trainer Information List </h2>
 			<table>
 				<tr>
 					<th>First Name</th>

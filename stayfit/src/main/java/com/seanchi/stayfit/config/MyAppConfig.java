@@ -36,7 +36,6 @@ public class MyAppConfig implements WebMvcConfigurer {
 	
 	private Logger myLogger = Logger.getLogger(getClass().getName());
 	
-	// define a bean for ViewResolver
 
 	@Bean
 	 public ViewResolver configureViewResolver() {
@@ -55,10 +54,9 @@ public class MyAppConfig implements WebMvcConfigurer {
 	@Bean
 	public DataSource myDataSource() {
 		
-		// create connection pool
+
 		ComboPooledDataSource myDataSource = new ComboPooledDataSource();
 
-		// set the jdbc driver
 		try {
 			myDataSource.setDriverClass("com.mysql.jdbc.Driver");		
 		}
@@ -66,16 +64,13 @@ public class MyAppConfig implements WebMvcConfigurer {
 			throw new RuntimeException(exc);
 		}
 		
-		// for sanity's sake, let's log url and user ... just to make sure we are reading the data
 		myLogger.info("jdbc.url=" + environment.getProperty("jdbc.url"));
 		myLogger.info("jdbc.user=" + environment.getProperty("jdbc.user"));
 		
-		// set database connection props
 		myDataSource.setJdbcUrl(environment.getProperty("jdbc.url"));
 		myDataSource.setUser(environment.getProperty("jdbc.user"));
 		myDataSource.setPassword(environment.getProperty("jdbc.password"));
 		
-		// set connection pool props
 		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
 		myDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
 		myDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));		
@@ -86,7 +81,7 @@ public class MyAppConfig implements WebMvcConfigurer {
 	
 	private Properties getHibernateProperties() {
 
-		// set hibernate properties
+
 		Properties props = new Properties();
 
 		props.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
@@ -96,14 +91,11 @@ public class MyAppConfig implements WebMvcConfigurer {
 	}
 
 	
-	// need a helper method 
-	// read environment property and convert to int
-	
 	private int getIntProperty(String propName) {
 		
 		String propVal = environment.getProperty(propName);
 		
-		// now convert to int
+
 		int intPropVal = Integer.parseInt(propVal);
 		
 		return intPropVal;
@@ -112,10 +104,8 @@ public class MyAppConfig implements WebMvcConfigurer {
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
 		
-		// create session factorys
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		
-		// set the properties
 		sessionFactory.setDataSource(myDataSource());
 		sessionFactory.setPackagesToScan(environment.getProperty("hibernate.packagesToScan"));
 		sessionFactory.setHibernateProperties(getHibernateProperties());
@@ -127,7 +117,6 @@ public class MyAppConfig implements WebMvcConfigurer {
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
 		
-		// setup transaction manager based on session factory
 		HibernateTransactionManager txManager = new HibernateTransactionManager();
 		txManager.setSessionFactory(sessionFactory);
 
